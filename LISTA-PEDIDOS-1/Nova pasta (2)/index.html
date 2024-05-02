@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Seleção de Produto e Quantidade</title>
+</head>
+<body>
+
+<h2>Selecione o Produto e a Quantidade:</h2>
+
+<form method="post" action="processar_formulario.php">
+  <label for="produto">Produto:</label>
+  <select id="produto" name="produto">
+    <option value="produto1">Produto 1</option>
+    <option value="produto2">Produto 2</option>
+    <option value="produto3">Produto 3</option>
+    <!-- Adicione mais opções de produtos conforme necessário -->
+  </select><br><br>
+  <label for="quantidade">Quantidade:</label>
+  <input type="number" id="quantidade" name="quantidade" min="1" max="10" onchange="calcularValor()"><br><br>
+  <label for="valor_total">Valor Total (R$):</label>
+  <span id="valor_total">0</span><br><br>
+  <input type="submit" value="Adicionar ao Carrinho">
+</form>
+
+<script>
+function calcularValor() {
+    var quantidade = document.getElementById("quantidade").value;
+    var valor_unitario = 5; // Valor fixo do produto
+    var valor_total = quantidade * valor_unitario;
+    document.getElementById("valor_total").textContent = valor_total.toFixed(2);
+}
+</script>
+
+</body>
+</html>
