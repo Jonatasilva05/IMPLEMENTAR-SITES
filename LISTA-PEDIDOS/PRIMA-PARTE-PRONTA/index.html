@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página de Pedidos</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h1>Escolha seu sabor e quantidade</h1>
+    <div id="sabores">
+        <label for="sabor">Escolha um sabor:</label>
+        <select id="sabor">
+            <option value="morango">Morango</option>
+            <option value="chocolate">Chocolate</option>
+            <option value="baunilha">Baunilha</option>
+        </select>
+    </div>
+    <div id="quantidade">
+        <label for="quantidade">Quantidade:</label>
+        <input type="number" id="quantidadeInput" value="1">
+        <select id="comboQuantidade" onchange="atualizarQuantidadeCombo()">
+            <option value="0">Escolha um combo</option>
+            <option value="20">20 unidades - R$ 20</option>
+            <option value="25">25 unidades - R$ 25</option>
+            <option value="30">30 unidades - R$ 30</option>
+            <option value="50">50 unidades - R$ 50</option>
+            <option value="80">80 unidades - R$ 80</option>
+            <option value="90">90 unidades - R$ 90</option>
+            <option value="100">100 unidades - R$ 100</option>
+        </select>
+    </div>
+    <div id="outrosSabores" style="display: none;">
+        <label>Outros sabores (apenas para combos):</label><br>
+        <input type="radio" id="nenhum" name="outroSabor" value="nenhum" onchange="atualizarQuantidadeCombo()">
+        <label for="nenhum">Nenhum sabor adicional</label><br>
+        <input type="radio" id="morango" name="outroSabor" value="morango">
+        <label for="morango">Morango</label><br>
+        <input type="radio" id="chocolate" name="outroSabor" value="chocolate">
+        <label for="chocolate">Chocolate</label><br>
+        <input type="radio" id="baunilha" name="outroSabor" value="baunilha">
+        <label for="baunilha">Baunilha</label><br>
+    </div>
+    <button onclick="adicionarPedido()">Adicionar ao pedido</button>
+    <h2>Lista de Pedidos</h2>
+    <ul id="lista-pedidos">
+        <!-- Aqui serão listados os pedidos adicionados -->
+    </ul>
+    
+    <script src="script.js"></script>
+</body>
+</html>

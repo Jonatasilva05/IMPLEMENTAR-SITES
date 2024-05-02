@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página de Pedidos</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h1>Escolha seu primeiro produto</h1>
+    <div id="produto1">
+        <label for="sabor1">Escolha um sabor:</label>
+        <select id="sabor1">
+            <option value="morango">Morango</option>
+            <option value="chocolate">Chocolate</option>
+            <option value="baunilha">Baunilha</option>
+        </select>
+    </div>
+    <div id="quantidade1">
+        <label for="quantidade1">Quantidade:</label>
+        <input type="number" id="quantidadeInput1" value="1">
+        <select id="comboQuantidade" onchange="atualizarQuantidadeCombo()">
+            <option value="0">Escolha um combo</option>
+            <option value="20">20 unidades - R$ 20</option>
+            <option value="25">25 unidades - R$ 25</option>
+            <option value="30">30 unidades - R$ 30</option>
+            <option value="50">50 unidades - R$ 50</option>
+            <option value="80">80 unidades - R$ 80</option>
+            <option value="90">90 unidades - R$ 90</option>
+            <option value="100">100 unidades - R$ 100</option>
+        </select>
+    </div>
+    <div id="outrosSabores1" style="display: none;">
+        <label>Outros sabores (apenas para combos):</label><br>
+        <input type="radio" id="nenhum1" name="outroSabor1" value="nenhum" onchange="atualizarQuantidadeCombo()">
+        <label for="nenhum1">Nenhum sabor adicional</label><br>
+        <input type="radio" id="morango1" name="outroSabor1" value="morango">
+        <label for="morango1">Morango</label><br>
+        <input type="radio" id="chocolate1" name="outroSabor1" value="chocolate">
+        <label for="chocolate1">Chocolate</label><br>
+        <input type="radio" id="baunilha1" name="outroSabor1" value="baunilha">
+        <label for="baunilha1">Baunilha</label><br>
+    </div>
+
+    <h1>Escolha seu segundo produto adicional (se desejar)</h1>
+    <div id="produto2">
+        <label for="sabor2">Escolha um sabor:</label>
+        <select id="sabor2">
+            <option value="morango">Morango</option>
+            <option value="chocolate">Chocolate</option>
+            <option value="baunilha">Baunilha</option>
+        </select>
+    </div>
+    <div id="quantidade2">
+        <label for="quantidade2">Quantidade:</label>
+        <input type="number" id="quantidadeInput2" value="1">
+    </div>
+    <button onclick="adicionarPedido()">Adicionar ao pedido</button>
+    <h2>Lista de Pedidos</h2>
+    <ul id="lista-pedidos">
+        <!-- Aqui serão listados os pedidos adicionados -->
+    </ul>
+    
+    <script src="script.js"></script>
+</body>
+</html>

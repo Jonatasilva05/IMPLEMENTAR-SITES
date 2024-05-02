@@ -1,0 +1,8 @@
+CREATE DATABASE pedidos_db;
+USE pedidos_db;
+
+CREATE TABLE pedidos (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    produto VARCHAR(255) NOT NULL,
+    quantidade INT NOT NULL
+);
