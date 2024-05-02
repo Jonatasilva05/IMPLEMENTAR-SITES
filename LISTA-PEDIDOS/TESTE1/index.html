@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Escolha de Produto</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Escolha seu Produto</h1>
+        <form id="productForm">
+            <label for="flavor1">Sabor:</label>
+            <select id="flavor1">
+                <option value="chocolate">Chocolate</option>
+                <option value="baunilha">Baunilha</option>
+                <option value="morango">Morango</option>
+            </select>
+            <label for="flavor2" style="display: none;">Sabor 2 (opcional):</label>
+            <select id="flavor2" style="display: none;">
+                <option value="">Nenhum</option>
+                <option value="chocolate">Chocolate</option>
+                <option value="baunilha">Baunilha</option>
+                <option value="morango">Morango</option>
+            </select>
+            <label for="quantity">Quantidade:</label>
+            <input type="number" id="quantity" min="1" value="1">
+            <button type="button" onclick="addToCart()">Adicionar ao Carrinho</button>
+            <button type="button" onclick="showComboOptions()">Mais Opções</button>
+            <div id="comboOptions" style="display: none;">
+                <p>Escolha uma opção de combo:</p>
+                <select id="combo">
+                    <option value="">Nenhum</option>
+                    <option value="20">20 unidades</option>
+                    <option value="35">35 unidades</option>
+                    <option value="40">40 unidades</option>
+                    <option value="55">55 unidades</option>
+                    <option value="60">60 unidades</option>
+                    <option value="80">80 unidades</option>
+                    <option value="90">90 unidades</option>
+                    <option value="100">100 unidades</option>
+                </select>
+            </div>
+        </form>
+        <h2>Lista de Pedidos</h2>
+        <ul id="cart"></ul>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
